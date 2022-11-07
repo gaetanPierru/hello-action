@@ -10,3 +10,14 @@ jobs:
     steps:
     - name: helloweurldz
       run : echo 'Hello simplonz'
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER_NAME }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: 22
+        script:
+          cd ~/projets/demol/gaet
+          pwd
+          touch gaetan.txt
