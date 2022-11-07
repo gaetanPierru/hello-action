@@ -1,7 +1,7 @@
 module.exports = {
     apps: [
         {
-            name: 'hello_master',
+            name: 'hello_gaetan',
             script: './dist/index.js'
         }
     ]
