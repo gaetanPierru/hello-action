@@ -17,7 +17,10 @@ jobs:
         username: ${{ secrets.USER_NAME }}
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
-        script:
-          cd ~/projets/demol/gaet
+        script: |
+          cd ~/projets/demo1/gaet/hello-action
           pwd
-          touch gaetan.txt
+          git pull origin master
+          git status
+          npm install
+          npm run build
