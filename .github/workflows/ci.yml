@@ -17,7 +17,7 @@ jobs:
         username: ${{ secrets.USER_NAME }}
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
-        script:
+        script: |
           cd ~/projets/demol/gaet
           pwd
           touch gaetan.txt
