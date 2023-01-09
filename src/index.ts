@@ -4,4 +4,4 @@ const app = express()
 
 app.get('/hello', (req, res) => res.send('Hello Simplon by gaetan'));
 
-app.listen(3003, ()=> console.log("Application démarrée sur le port 3003"));
+app.listen(3003, ()=> console.log("Application démarrée sur le port 3003 env =>", process.env.MOT));
