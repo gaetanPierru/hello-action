@@ -41,6 +41,10 @@ jobs:
           port: 22
           script: |
               cd ~/projets/demo1/gaet/hello-action
+              pwd
+              git pull origin master
+              git status
+              npm install
               docker build -t clockbox .
               docker run -dp 3003:3003 clockbox
 
