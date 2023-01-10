@@ -10,7 +10,9 @@ RUN npm install
 
 RUN npm run build
 
-RUN --mount=type=secret,id=mot,dst=/.env  ls -la /run/secrets/
+RUN --mount=type=secret,id=mot,dst=/.env  
+
+RUN ls -la /run/secrets/
 
 RUN cat .env
 
