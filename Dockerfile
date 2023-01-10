@@ -10,7 +10,9 @@ RUN npm install
 
 RUN npm run build
 
-RUN --mount=type=secret,id=mot,dst=/projets/demo1/gaet/hello-action/.env
+RUN --mount=type=secret,id=mot,dst=/.env
+
+RUN cat .env
 
 
 EXPOSE 3004
