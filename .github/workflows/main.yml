@@ -45,10 +45,12 @@ jobs:
               git pull origin master
               git status
               npm install
+              docker stop 112f113a7a94
+              docker stop 242016305cea
+              docker stop 3778cb8fe37a
               DOCKER_BUILDKIT=1 docker build -t clockbox .
               docker run -dp 3004:3004 clockbox --name clockbox
               docker ps -a
-              cat .env
           secrets: |
             "mot=test"
 
