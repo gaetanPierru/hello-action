@@ -47,7 +47,7 @@ jobs:
               npm install
               docker stop fa8612c47aeb
               DOCKER_BUILDKIT=1 docker build -t clockbox .
-              docker run -dp 3004:3004 clockbox
+              docker run -dp 3004:3004  --mount type=secret,id=mot,dst=.env -v .env:.env clockbox
               docker ps -a
           secrets: |
             "mot=test"
