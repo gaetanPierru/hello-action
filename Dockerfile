@@ -9,6 +9,8 @@ RUN npm install
 
 RUN npm run build
 
+RUN --mount=type=secret,id=mot
+
 EXPOSE 3003
 
 CMD ["npm", "run", "start"]
