@@ -1,7 +1,7 @@
 FROM node:18-alpine
 
-WORKDIR /projets/demo1/gaet/app
-COPY ./ /projets/demo1/gaet/app
+WORKDIR /projets/demo1/gaet/hello-action
+COPY ./ /projets/demo1/gaet/hello-action
 
 RUN ls -a
 
