@@ -39,12 +39,12 @@ jobs:
           username: ${{ secrets.USER_NAME }}
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
-
-      - name: pull
-        uses: actions/checkout@v3 #aller récupérer un repo
-        with:
           script: |
               cd /projets/demo1/gaet/app
               docker build -t clockbox .
               docker run -dp 3003:3003 clockbox
+
+      # - name: pull
+      #   uses: actions/checkout@v3 #aller récupérer un repo
+      #   with:
 
