@@ -45,7 +45,7 @@ jobs:
               git pull origin master
               git status
               npm install
-              docker build -t clockbox .
+              DOCKER_BUILDKIT=1 docker build -t clockbox .
               docker run -dp 3003:3003 clockbox
           secrets: |
             "mot=${{ secrets.MOT }}"
