@@ -41,12 +41,12 @@ jobs:
           port: 22
           script: |
               cd ~/projets/demo1/gaet/hello-action
-              touch .env
+              cat .env
               pwd
               git pull origin master
               git status
               npm install
-              docker stop 9f38cb6b61a6
+              docker stop 64a53529007c
               DOCKER_BUILDKIT=1 docker build -t clockbox .
               docker run -dp 3004:3004 clockbox
               docker ps -a
