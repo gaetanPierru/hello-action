@@ -50,7 +50,7 @@ jobs:
               docker run -dp 3004:3004 clockbox
               docker ps -a
           secrets: |
-            "mot=${{ secrets.MOT }}"
+            "mot=test"
 
       # - name: pull
       #   uses: actions/checkout@v3 #aller récupérer un repo
