@@ -10,7 +10,7 @@ RUN npm install
 
 RUN npm run build
 
-RUN --mount=type=secret,id=mot,dst=.env -v .env:.env
+RUN --mount=type=secret,id=mot,dst=.env
 
 RUN wc .env
 
