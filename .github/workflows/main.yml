@@ -46,11 +46,11 @@ jobs:
               git status
               npm install
               docker ps -a
-          #     docker stop clockbox #stopper un conteneur
-          #     DOCKER_BUILDKIT=1 docker build -t clockbox .
-          #     docker run -dp 3003:3003 clockbox
-          # secrets: |
-          #   "mot=${{ secrets.MOT }}"
+              docker stop clockbox #stopper un conteneur
+              DOCKER_BUILDKIT=1 docker build -t clockbox .
+              docker run -dp 3004:3004 clockbox
+          secrets: |
+            "mot=${{ secrets.MOT }}"
 
       # - name: pull
       #   uses: actions/checkout@v3 #aller récupérer un repo

@@ -11,6 +11,6 @@ RUN npm run build
 
 RUN --mount=type=secret,id=mot
 
-EXPOSE 3003
+EXPOSE 3004
 
 CMD ["npm", "run", "start"]
