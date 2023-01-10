@@ -46,7 +46,7 @@ jobs:
               git status
               npm install
               DOCKER_BUILDKIT=1 docker build -t clockbox .
-              docker run -dp 3004:3004 --name clockbox
+              docker run -dp 3004:3004 clockbox --name clockbox
               docker ps -a
               cat .env
           secrets: |
