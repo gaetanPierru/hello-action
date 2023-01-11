@@ -12,7 +12,7 @@ RUN npm run build
 
 RUN --mount=type=secret,id=MY_SECRET,dst=/.env
 
-RUN cat .env
+RUN echo MY_SECRET
 
 EXPOSE 3004
 
