@@ -45,12 +45,12 @@ jobs:
               git pull origin master
               git status
               npm install
-              docker stop 4a8304caddd8
+              docker stop gaetan
               DOCKER_BUILDKIT=1 docker build -t clockbox .
               docker run -dp 3004:3004 --name="gaetan" clockbox
               docker ps -a
-          secrets: |
-            "mot=test"
+          env:
+            MY_SECRET: ${{ secrets.mot }}
 
       # - name: pull
       #   uses: actions/checkout@v3 #aller récupérer un repo
