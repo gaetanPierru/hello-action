@@ -46,6 +46,7 @@ jobs:
               git status
               npm install
               docker container stop gaetan
+              docker container rm gaetan
               DOCKER_BUILDKIT=1 docker build -t clockbox .
               docker run -dp 3004:3004 --name="gaetan" clockbox
               docker ps -a
