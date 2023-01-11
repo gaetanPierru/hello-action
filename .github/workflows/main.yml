@@ -49,8 +49,8 @@ jobs:
               DOCKER_BUILDKIT=1 docker build -t clockbox .
               docker run -dp 3004:3004 --name="gaetan" clockbox
               docker ps -a
-          env:
-              MY_SECRET: ${{ secrets.MOT }}
+          env: |
+              MY_SECRET: ${{ secrets.mot }}
 
       # - name: pull
       #   uses: actions/checkout@v3 #aller récupérer un repo
