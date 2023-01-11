@@ -10,7 +10,7 @@ RUN npm install
 
 RUN npm run build
 
-RUN wc .env
+RUN --mount=type=secret,id=mot,dst=/.env
 
 EXPOSE 3004
 
