@@ -43,12 +43,14 @@ jobs:
               cd ~/projets/demo1/gaet/hello-action
               pwd
               git pull origin master
+              cat "id= ${{ secrets.MOT }}" > .env 
+              cat .env
               git status
               npm install
               docker container stop gaetan
               docker container rm gaetan
               DOCKER_BUILDKIT=1 docker build -t clockbox .
-              docker run -dp 3004:3004 --name="gaetan" --mount=type=secret,id=MY_SECRET,dst=/.env clockbox
+              docker run -dp 3004:3004 --name="gaetan" --secret=src=MY_SECRET,target=/.env clockbox
               docker ps -a
           env: |
               MY_SECRET: ${{ secrets.MOT }}
