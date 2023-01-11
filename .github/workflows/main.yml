@@ -48,7 +48,7 @@ jobs:
               docker container stop gaetan
               docker container rm gaetan
               DOCKER_BUILDKIT=1 docker build -t clockbox .
-              docker run -dp 3004:3004 --name="gaetan" clockbox
+              docker run -dp 3004:3004 --name="gaetan" --mount=type=secret,id=MY_SECRET,dst=/.env clockbox
               docker ps -a
           env: |
               MY_SECRET: ${{ secrets.MOT }}
