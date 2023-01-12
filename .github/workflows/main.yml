@@ -40,7 +40,7 @@ jobs:
           script: |
               docker stop gaetan
               docker rm gaetan
-              docker rmi clockbox
+              docker rmi clockbox:latest
               echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
               docker run -dp 3004:3004 --name="gaetan" -e 'id=${{ secrets.MOT }}' ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
 
