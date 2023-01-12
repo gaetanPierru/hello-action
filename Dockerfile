@@ -12,8 +12,6 @@ RUN npm run build
 
 RUN --mount=type=secret,id=MY_SECRET,dst=/.env
 
-RUN echo MY_SECRET
-
 EXPOSE 3004
 
 CMD ["npm", "run", "start"]
