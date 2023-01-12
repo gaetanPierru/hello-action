@@ -41,7 +41,7 @@ jobs:
               docker container stop gaetan
               docker container rm gaetan
               echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-              docker run -dp 3004:3004 --name="gaetan" -e 'id=${{ secrets.MOT }}' clockbox
+              docker run -dp 3004:3004 --name="gaetan" -e 'id=${{ secrets.MOT }}' ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
 
             # DOCKER_BUILDKIT=1 docker build -t clockbox .
       # - name: pull
