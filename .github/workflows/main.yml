@@ -30,8 +30,6 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
 
-      - name: helloweurldz
-        run : echo 'Hello simplonz'
       - name: Deploy using ssh
         uses: appleboy/ssh-action@master
         with:
@@ -42,7 +40,7 @@ jobs:
           script: |
               docker container stop gaetan
               docker container rm gaetan
-              docker run -dp 3004:3004 --name="gaetan" -e 'id=${{ secrets.MOT }}'  clockbox
+              docker run -dp 3004:3004 --name="gaetan" -e 'id=${{ secrets.MOT }}' clockbox
 
             # DOCKER_BUILDKIT=1 docker build -t clockbox .
       # - name: pull
