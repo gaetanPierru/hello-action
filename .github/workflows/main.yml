@@ -40,17 +40,8 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
           script: |
-              cd ~/projets/demo1/gaet/hello-action
-              pwd
-              git pull origin master
-              git status
-              npm install
               docker container stop gaetan
               docker container rm gaetan
               DOCKER_BUILDKIT=1 docker build -t clockbox .
               docker run -dp 3004:3004 --name="gaetan" -e 'id=${{ secrets.MOT }}'  clockbox
-
-      # - name: pull
-      #   uses: actions/checkout@v3 #aller récupérer un repo
-      #   with:
 
